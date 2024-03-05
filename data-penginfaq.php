@@ -24,7 +24,7 @@ $data = query('SELECT * FROM tb_user');
     <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
     <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/app.css">
-    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/images/icon.png" type="image/x-icon">
 </head>
 
 <body class="bg-primary text-white">
@@ -84,7 +84,10 @@ $data = query('SELECT * FROM tb_user');
                                                 <?= $no ?>
                                             </td>
                                             <td>
-                                                <?= $row['nama'] ?>
+                                                <a style="color: black;"
+                                                    href="maps-google.php?lat=<?= $row['latitude'] ?>&lng=<?= $row['longitude'] ?>">
+                                                    <?= $row['nama'] ?>
+                                                </a>
                                             </td>
                                             <td>
                                                 <?= $row['nik']; ?>
@@ -96,7 +99,8 @@ $data = query('SELECT * FROM tb_user');
                                                 <?= $row['alamat'] ?>
                                             </td>
                                             <td>
-                                                <img src=uploads/<?= $row['gmbrRmh']?>>
+                                                <img src="assets/images/lazy.png" data-src="uploads/<?= $row['gmbrRmh']; ?>"
+                                                    alt="Gambar" loading="lazy" width="100">
                                             </td>
                                             <td>
                                                 <?= $row['tgl_peng'] ?>
@@ -149,24 +153,21 @@ $data = query('SELECT * FROM tb_user');
 
                 </section>
             </div>
-
             <footer>
                 <?php include 'views/footer.php';
                 ?>
             </footer>
         </div>
     </div>
-    <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-
-    <script src="assets/vendors/simple-datatables/simple-datatables.js"></script>
-    <script>
-        // Simple Datatable
-        let table1 = document.querySelector('#table1');
-        let dataTable = new simpleDatatables.DataTable(table1);
-    </script>
-
-    <script src="assets/js/main.js"></script>
 </body>
+<script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendors/simple-datatables/simple-datatables.js"></script>
+<script>
+    // Simple Datatable
+    let table1 = document.querySelector('#table1');
+    let dataTable = new simpleDatatables.DataTable(table1);
+</script>
+<script src="assets/js/main.js"></script>
 
 </html>

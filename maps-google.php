@@ -5,7 +5,17 @@ if (!isset($_SESSION['is_login'])) {
   header('Location: login.php');
 }
 
-$data = query('SELECT nama, alamat, latitude, longitude FROM tb_user');
+$data = query('SELECT nama, alamat,status, latitude, longitude FROM tb_user');
+
+$latitude = -8.9163742;
+$longitude = 116.7478714;
+
+// Periksa apakah parameter lat dan lng telah diberikan dalam URL
+if (isset($_GET['lat']) && isset($_GET['lng'])) {
+    // Jika iya, gunakan nilai yang diberikan dalam URL
+    $latitude = $_GET['lat'];
+    $longitude = $_GET['lng'];
+}
 
 ?>
 
@@ -24,7 +34,7 @@ $data = query('SELECT nama, alamat, latitude, longitude FROM tb_user');
   <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
   <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
   <link rel="stylesheet" href="assets/css/app.css">
-  <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
+  <link rel="shortcut icon" href="assets/images/icon.png" type="image/x-icon">
   <style type="text/css">
     #map {
       float: right;
@@ -83,7 +93,21 @@ $data = query('SELECT nama, alamat, latitude, longitude FROM tb_user');
                       <?php foreach ($data as $index => $key): ?>
                         <tr onclick="selectMarker(<?php echo $index; ?>)">
                           <td>
-                            <?php echo $key['nama']; ?>
+                            <?php echo $key['nama'] . '</br>' ?>
+                            <?php if ($key['status'] == 'Hijau') {
+                              ?>
+                              <span class="badge bg-success">Hijau</span>
+                              <?php
+                            } elseif ($key['status'] == 'Kuning') {
+                              ?>
+                              <span class="badge bg-warning">Kuning</span>
+                              <?php
+                            } elseif ($key['status'] == 'Merah') {
+                              ?>
+                              <span class="badge bg-danger">Merah</span>
+                              <?php
+                            }
+                            ; ?>
                           </td>
                         </tr>
                       <?php endforeach; ?>
@@ -95,15 +119,35 @@ $data = query('SELECT nama, alamat, latitude, longitude FROM tb_user');
             <div class="col-md-8"> <!-- Lebar peta diatur di sini -->
               <div id="map">
                 <script async defer
-                  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3bsDl1xddiU_w38hA-fsGea8kWsp5uJM&callback=initMap"></script>
+                  src="https://maps.googleapis.com/maps/api/js?key=APIKEY&callback=initMap"></script>
                 <script>
                   var map, markers, infoWindow;
 
+                  var urlParams = new URLSearchParams(window.location.search);
+                  var latitude = urlParams.get('lat');
+                  var longitude = urlParams.get('lng');
+
                   function createMarker(data) {
+                    var iconUrl;
+                    switch (data.status.toLowerCase()) {
+                      case 'hijau':
+                        iconUrl = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png';
+                        break;
+                      case 'merah':
+                        iconUrl = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
+                        break;
+                      case 'kuning':
+                        iconUrl = 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png';
+                        break;
+                      default:
+                        iconUrl = 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'; // Default to blue
+                        break;
+                    }
                     var marker = new google.maps.Marker({
                       position: new google.maps.LatLng(data.latitude, data.longitude),
                       map: map,
                       title: data.alamat,
+                      icon: iconUrl
                     });
 
                     marker.addListener("click", function () {
@@ -119,9 +163,16 @@ $data = query('SELECT nama, alamat, latitude, longitude FROM tb_user');
                   }
 
                   function initMap() {
+                    var defaultCenter = new google.maps.LatLng(-8.9163742, 116.7478714);
+                    var defaultZoom = 12;
+
+                    // Gunakan nilai default jika tidak ada latitude dan longitude dari URL
+                    var center = latitude && longitude ? new google.maps.LatLng(latitude, longitude) : defaultCenter;
+                    var zoom = latitude && longitude ? 18 : defaultZoom;
+
                     map = new google.maps.Map(document.getElementById("map"), {
-                      center: new google.maps.LatLng(-8.685523, 117.5687007),
-                      zoom: 9,
+                      center: center,
+                      zoom: zoom
                     });
 
                     infoWindow = new google.maps.InfoWindow();
@@ -135,7 +186,7 @@ $data = query('SELECT nama, alamat, latitude, longitude FROM tb_user');
                   function selectMarker(index) {
                     var selectedMarker = markers[index];
                     map.setCenter(selectedMarker.getPosition());
-                    map.setZoom(16);
+                    map.setZoom(18);
                     google.maps.event.trigger(selectedMarker, 'click');
                   }
 

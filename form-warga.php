@@ -52,7 +52,7 @@ if (isset($_POST['submit'])) {
     <!-- Special version of Bootstrap that is isolated to content wrapped in .bootstrap-iso -->
     <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
     <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3bsDl1xddiU_w38hA-fsGea8kWsp5uJM&libraries=places"></script>
+        src="https://maps.googleapis.com/maps/api/js?key=APIKEY&libraries=places"></script>
 
     <!--Font Awesome (added because you use icons in your prepend/append)-->
 </head>
@@ -119,7 +119,7 @@ if (isset($_POST['submit'])) {
                                                                     <div class="position-relative">
                                                                         <input type="text" class="form-control"
                                                                             placeholder="Masukkan NIK" name="nik"
-                                                                            required>
+                                                                            value="-">
                                                                         <div class="form-control-icon">
                                                                             <i class="bi bi-credit-card"></i>
                                                                         </div>
@@ -228,47 +228,10 @@ if (isset($_POST['submit'])) {
                 }
             });
         }
-        
-
-
     </script>
-    <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-
-    <!-- filepond validation -->
-    <script
-        src="https://unpkg.com/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.js"></script>
-    <script
-        src="https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js"></script>
-
-    <!-- image editor -->
-    <script
-        src="https://unpkg.com/filepond-plugin-image-exif-orientation/dist/filepond-plugin-image-exif-orientation.js"></script>
-    <script src="https://unpkg.com/filepond-plugin-image-crop/dist/filepond-plugin-image-crop.js"></script>
-    <script src="https://unpkg.com/filepond-plugin-image-filter/dist/filepond-plugin-image-filter.js"></script>
-    <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
-    <script src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-
-    <!-- Include Date Range Picker -->
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
-
-    <!-- toastify -->
-    <script src="assets/vendors/toastify/toastify.js"></script>
-
-    <!-- filepond -->
-    <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
-    <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-
-    <script src="assets/vendors/jquery/jquery.min.js"></script>
-    <script src="assets/vendors/summernote/summernote-lite.min.js"></script>
-
-
-    <script src="assets/js/main.js"></script>
 </body>
-
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="assets/vendors/jquery/jquery.min.js"></script>
+    <script src="assets/js/main.js"></script>
 </html>

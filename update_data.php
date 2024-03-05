@@ -114,7 +114,7 @@ if (isset($_POST['submit'])) {
                                                                     <div class="position-relative">
                                                                         <input type="text" class="form-control"
                                                                             placeholder="Masukkan Nama Lengkap"
-                                                                            name="username" required
+                                                                            name="username" disabled
                                                                             value="<?= $data['nama']; ?>">
                                                                         <div class="form-control-icon">
                                                                             <i class="bi bi-person"></i>
