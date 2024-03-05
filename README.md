@@ -9,10 +9,10 @@ Proyek ini adalah website untuk Masjid Jami' Nurul Iman Sumbawa. Website ini dik
 ## Fitur Utama
 
 - Data Penginfaq
-![Logo Proyek](assets\images\Fitur1.JPG)
+![Logo Proyek](assets/images/Fitur1.JPG)
 
 - Maps Geolocator
-![Logo Proyek](assets\images\Fitur2.JPG)
+![Logo Proyek](assets/images/Fitur2.JPG)
 
 ## Instalasi
 
