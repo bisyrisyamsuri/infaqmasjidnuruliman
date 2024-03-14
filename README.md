@@ -4,13 +4,7 @@ Website ini merupakan website admin LTS yang digunakan pengurus masjid bersangku
 
 ## Tentang Proyek
 
-Proyek ini adalah website untuk Masjid Jami' Nurul Iman Sumbawa. Website ini dikembangkan menggunakan <div align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" height="40" alt="bootstrap logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" height="40" alt="php logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="40" alt="javascript logo"  /> untuk memungkinkan pengembangan yang cepat dan responsif.
-</div>
+Proyek ini adalah website untuk Masjid Jami' Nurul Iman Sumbawa. Website ini dikembangkan menggunakan [![Php Doc](https://img.shields.io/badge/Doc-Php-blue.svg)] untuk memungkinkan pengembangan yang cepat dan responsif.
 
 ## Fitur Utama
 
