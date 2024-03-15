@@ -8,10 +8,10 @@ Proyek ini adalah website untuk Masjid Jami' Nurul Iman Sumbawa. Website ini dik
 
 ## Fitur Utama
 
-- Data Penginfaq
+### Data Penginfaq
 ![Logo Proyek](assets/images/Fitur1.JPG)
 
-- Maps Geolocator
+### Maps Geolocator
 ![Logo Proyek](assets/images/Fitur2.JPG)
 
 ## Instalasi
@@ -20,6 +20,10 @@ Proyek ini adalah website untuk Masjid Jami' Nurul Iman Sumbawa. Website ini dik
 2. Buka terminal dan navigasi ke direktori proyek.
 3. Jalankan perintah `php -S localhost:8000` untuk menjalankan server lokal.
 4. Buka browser dan kunjungi `http://localhost:8000` untuk melihat website.
+
+## Penggunaan API Google Maps
+
+Website ini memanfaatkan [![Google Maps API](https://img.shields.io/badge/Doc-APIGoogleMaps-green.svg)](https://developers.google.com/maps/documentation) untuk menyediakan fitur Maps Geolocator. Google Maps API memungkinkan integrasi peta interaktif ke dalam website dengan berbagai fitur seperti menampilkan lokasi, marker, dan interaksi pengguna.
 
 ## Kontribusi
 
