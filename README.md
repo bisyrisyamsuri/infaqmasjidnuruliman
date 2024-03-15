@@ -23,7 +23,7 @@ Proyek ini adalah website untuk Masjid Jami' Nurul Iman Sumbawa. Website ini dik
 
 ## Penggunaan API Google Maps
 
-Website ini memanfaatkan [![Google Maps API](https://img.shields.io/badge/Doc-APIGoogleMaps-green.svg)](https://developers.google.com/maps/documentation) untuk menyediakan fitur Maps Geolocator. Google Maps API memungkinkan integrasi peta interaktif ke dalam website dengan berbagai fitur seperti menampilkan lokasi, marker, dan interaksi pengguna.
+Website ini memanfaatkan [![Google Maps API](https://img.shields.io/badge/Doc-APIGoogleMaps-blue.svg)](https://developers.google.com/maps/documentation) untuk menyediakan fitur Maps Geolocator. Google Maps API memungkinkan integrasi peta interaktif ke dalam website dengan berbagai fitur seperti menampilkan lokasi, marker, dan interaksi pengguna.
 
 ## Kontribusi
 
